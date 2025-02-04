@@ -3,6 +3,7 @@
 from util.objects import *
 from util.routines import *
 
+
 # Hi! Corbin here. Note the line below says GoslingUtils in the videos.
 # DO NOT change the line below. It's no longer compatible with GoslingUtils so we renamed it.
 # There are a few places like this where the code that you started with (the code you downloaded) might
@@ -11,5 +12,7 @@ from util.routines import *
 class Bot(BotCommandAgent):
     # This function runs every in-game tick (every time the game updates anything)
     def run(self):
+        if self.kickoff_flag:
+            self.set_intent(kickoff())
         # set_intent tells the bot what it's trying to do
-        self.set_intent(drive(500))
+        self.set_intent(short_shot(self.foe_goal))
