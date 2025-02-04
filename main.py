@@ -15,4 +15,4 @@ class Bot(BotCommandAgent):
         if self.kickoff_flag:
             self.set_intent(kickoff())
         # set_intent tells the bot what it's trying to do
-        self.set_intent(short_shot(self.foe_goal))
+        self.set_intent(short_shot(self.foe_goal.location))
